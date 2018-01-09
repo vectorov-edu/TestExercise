@@ -8,15 +8,24 @@
 
 import UIKit
 import CoreData
+import GoogleMaps
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    static var persistentContainer : NSPersistentContainer {
+        return (UIApplication.shared.delegate as! AppDelegate).persistentContainer
+    }
+    
     var window: UIWindow?
 
-
+    private let apiKeyMap = "AIzaSyD4Cl3PLyLu0YLsmYlkHBK_yRV0Yfjzblk"
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        GMSServices.provideAPIKey(apiKeyMap)
+        
         return true
     }
 

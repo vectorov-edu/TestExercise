@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "closure #1 in CoreDataRepository.SaveUsersData(users:):CoreDataRepository.swift">
+      </ContextState>
+      <ContextState
+         contextName = "UserDetailsViewController.handleViewPan(recognizer:):UserDetailsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "recognizer.view">
+            </PersistentString>
+            <PersistentString
+               value = "self.view">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "fillData #1 (userData:saveUserData:) in static SavedUserData.createOrUpdate(userData:in:):SavedUserData.swift">
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in CoreDataRepository.GetUsersData():CoreDataRepository.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "savedUserData">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "UserDetailsViewController.gestureRecognizerShouldBegin(_:):UserDetailsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.view">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "UserDetailsViewController.CreateShareButton():UserDetailsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "navigationItem">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in UserListDataController.GetDataFromNet(completion:):UserListDataController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "UserDetailsViewController.mapView(_:didTap:):UserDetailsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "dropDownView.center">
+            </PersistentString>
+            <PersistentString
+               value = "UIScreen.main.bounds.maxY">
+            </PersistentString>
+            <PersistentString
+               value = "dropDownView.frame">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "UserDetailsViewController.handlePan(recognizer:):UserDetailsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "view.center">
+            </PersistentString>
+            <PersistentString
+               value = "UIScreen.main.bounds.maxY - view.frame.height/2">
+            </PersistentString>
+            <PersistentString
+               value = "self.view">
+            </PersistentString>
+            <PersistentString
+               value = "recognizer.view">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

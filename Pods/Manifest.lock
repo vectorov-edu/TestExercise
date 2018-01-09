@@ -1,0 +1,27 @@
+PODS:
+  - Alamofire (4.6.0)
+  - GoogleMaps (2.5.0):
+    - GoogleMaps/Maps (= 2.5.0)
+  - GoogleMaps/Base (2.5.0)
+  - GoogleMaps/Maps (2.5.0):
+    - GoogleMaps/Base
+  - Moya (10.0.1):
+    - Moya/Core (= 10.0.1)
+  - Moya/Core (10.0.1):
+    - Alamofire (~> 4.1)
+    - Result (~> 3.0)
+  - Result (3.2.4)
+
+DEPENDENCIES:
+  - GoogleMaps
+  - Moya
+
+SPEC CHECKSUMS:
+  Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
+  GoogleMaps: c087b8e5dfe87ca6ebf59adb9b4894a4146bec4f
+  Moya: 9e621707ff754eeb51ff3ec51a3d54e517c0733a
+  Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
+
+PODFILE CHECKSUM: f200779d2045aec51e47a823647b169813a6a7be
+
+COCOAPODS: 1.3.1
