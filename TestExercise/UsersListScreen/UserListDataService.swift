@@ -1,7 +1,7 @@
 import Foundation
 import Moya
 
-class UserListDataController {
+class UserListDataService {
     let repository : CoreDataRepository
     
     init(repo : CoreDataRepository){

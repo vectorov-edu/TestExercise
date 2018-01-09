@@ -10,7 +10,7 @@
 		662599305F28D10B77D65F62 /* Pods_TestExercise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EF897920E2B59443459FDBB /* Pods_TestExercise.framework */; };
 		8444F49A200105F700C7735D /* CoreDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8444F499200105F700C7735D /* CoreDataRepository.swift */; };
 		8444F49D2001071400C7735D /* SavedUserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8444F49C2001071400C7735D /* SavedUserData.swift */; };
-		8444F49F200160E900C7735D /* UserListDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8444F49E200160E900C7735D /* UserListDataController.swift */; };
+		8444F49F200160E900C7735D /* UserListDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8444F49E200160E900C7735D /* UserListDataService.swift */; };
 		845BBC0A1FF53990006DCD39 /* UserDataJsonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845BBC091FF53990006DCD39 /* UserDataJsonModel.swift */; };
 		8468A1FE2003A5C600904006 /* DropDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8468A1FD2003A5C600904006 /* DropDownView.swift */; };
 		847A7B2D1FF076A200F386B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847A7B2C1FF076A200F386B3 /* AppDelegate.swift */; };
@@ -22,6 +22,7 @@
 		847A7B471FF07C7F00F386B3 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847A7B431FF07C7F00F386B3 /* Address.swift */; };
 		847A7B481FF07C7F00F386B3 /* Geo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847A7B441FF07C7F00F386B3 /* Geo.swift */; };
 		847A7B4A1FF07C7F00F386B3 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847A7B461FF07C7F00F386B3 /* Company.swift */; };
+		847FA6F120056025008D8DDC /* ShortUserDataTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847FA6EF20056025008D8DDC /* ShortUserDataTableViewCell.xib */; };
 		84E33B2F1FFD98CC005082A7 /* ShortUserDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E33B2E1FFD98CC005082A7 /* ShortUserDataTableViewCell.swift */; };
 		84E33B321FFD9DB1005082A7 /* UsersApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E33B311FFD9DB1005082A7 /* UsersApiService.swift */; };
 		84E4332C1FFED535007BC8EB /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E4332B1FFED535007BC8EB /* UserDataModel.swift */; };
@@ -33,7 +34,7 @@
 		3FFC3A62EC222C7909E439E4 /* Pods-TestExercise.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestExercise.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestExercise/Pods-TestExercise.release.xcconfig"; sourceTree = "<group>"; };
 		8444F499200105F700C7735D /* CoreDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRepository.swift; sourceTree = "<group>"; };
 		8444F49C2001071400C7735D /* SavedUserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedUserData.swift; sourceTree = "<group>"; };
-		8444F49E200160E900C7735D /* UserListDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListDataController.swift; sourceTree = "<group>"; };
+		8444F49E200160E900C7735D /* UserListDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListDataService.swift; sourceTree = "<group>"; };
 		845BBC091FF53990006DCD39 /* UserDataJsonModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDataJsonModel.swift; sourceTree = "<group>"; };
 		8468A1FD2003A5C600904006 /* DropDownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownView.swift; sourceTree = "<group>"; };
 		847A7B291FF076A200F386B3 /* TestExercise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestExercise.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,6 +48,7 @@
 		847A7B431FF07C7F00F386B3 /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		847A7B441FF07C7F00F386B3 /* Geo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Geo.swift; sourceTree = "<group>"; };
 		847A7B461FF07C7F00F386B3 /* Company.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
+		847FA6EF20056025008D8DDC /* ShortUserDataTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShortUserDataTableViewCell.xib; sourceTree = "<group>"; };
 		84E33B2E1FFD98CC005082A7 /* ShortUserDataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortUserDataTableViewCell.swift; sourceTree = "<group>"; };
 		84E33B311FFD9DB1005082A7 /* UsersApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersApiService.swift; sourceTree = "<group>"; };
 		84E4332B1FFED535007BC8EB /* UserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
@@ -136,7 +138,8 @@
 			children = (
 				847A7B2E1FF076A200F386B3 /* UsersListViewController.swift */,
 				84E33B2E1FFD98CC005082A7 /* ShortUserDataTableViewCell.swift */,
-				8444F49E200160E900C7735D /* UserListDataController.swift */,
+				8444F49E200160E900C7735D /* UserListDataService.swift */,
+				847FA6EF20056025008D8DDC /* ShortUserDataTableViewCell.xib */,
 			);
 			path = UsersListScreen;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 			files = (
 				847A7B3A1FF076A200F386B3 /* LaunchScreen.storyboard in Resources */,
 				847A7B371FF076A200F386B3 /* Assets.xcassets in Resources */,
+				847FA6F120056025008D8DDC /* ShortUserDataTableViewCell.xib in Resources */,
 				847A7B321FF076A200F386B3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -324,7 +328,7 @@
 				84E33B2F1FFD98CC005082A7 /* ShortUserDataTableViewCell.swift in Sources */,
 				8468A1FE2003A5C600904006 /* DropDownView.swift in Sources */,
 				8444F49A200105F700C7735D /* CoreDataRepository.swift in Sources */,
-				8444F49F200160E900C7735D /* UserListDataController.swift in Sources */,
+				8444F49F200160E900C7735D /* UserListDataService.swift in Sources */,
 				847A7B481FF07C7F00F386B3 /* Geo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

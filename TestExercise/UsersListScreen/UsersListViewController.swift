@@ -17,17 +17,18 @@ class UsersListViewController: UIViewController {
     
     private var request : MoyaProvider<UsersApiService>?
     private var userList : [UserDataModel]?
-    private var controller : UserListDataController?
+    private var controller : UserListDataService?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        controller = UserListDataController(repo: CoreDataRepository())
+        controller = UserListDataService(repo: CoreDataRepository())
         controller?.GetDataForViewController(completion: OnDataReceive)
         
         self.userListTableView.dataSource = self
         self.userListTableView.delegate = self
 
+        userListTableView.register(UINib.init(nibName: "ShortUserDataTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: ShortUserDataTableViewCell.identifier)
     }
     
     // MARK: - Navigation
