@@ -10,7 +10,7 @@ import Foundation
 import Moya
 
 class UsersApiService : TargetType {
-    var baseURL: URL {return URL(string: "https://jsonplaceholder.typicode.com")!}
+    var baseURL: URL {return URL(string: "http://jsonplaceholder.typicode.com")!}
     
     var path: String{ return "/users" }
     

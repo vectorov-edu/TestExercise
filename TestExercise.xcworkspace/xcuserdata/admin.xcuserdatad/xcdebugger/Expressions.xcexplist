@@ -50,13 +50,7 @@
          contextName = "UserDetailsViewController.mapView(_:didTap:):UserDetailsViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "dropDownView.center">
-            </PersistentString>
-            <PersistentString
-               value = "UIScreen.main.bounds.maxY">
-            </PersistentString>
-            <PersistentString
-               value = "dropDownView.frame">
+               value = "self.childViewControllers">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -64,16 +58,24 @@
          contextName = "UserDetailsViewController.handlePan(recognizer:):UserDetailsViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "view.center">
+               value = "recognizer.view">
+            </PersistentString>
+            <PersistentString
+               value = "view.frame">
             </PersistentString>
             <PersistentString
                value = "UIScreen.main.bounds.maxY - view.frame.height/2">
             </PersistentString>
             <PersistentString
-               value = "self.view">
+               value = "view.center">
             </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "UserDetailsViewController.AddUserDataController(childController:frame:):UserDetailsViewController.swift">
+         <PersistentStrings>
             <PersistentString
-               value = "recognizer.view">
+               value = "childViewControllers">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

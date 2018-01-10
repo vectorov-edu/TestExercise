@@ -1,63 +1,28 @@
-//
-//  UserDetailsViewController.swift
-//  TestExercise
-//
-//  Created by Admin on 05.01.2018.
-//  Copyright © 2018 Admin. All rights reserved.
-//
 
 import UIKit
 import GoogleMaps
 
 class UserDetailsViewController: UIViewController {
 
-    @IBOutlet weak internal var dropDownView: DropDownView! {
-        didSet {
-            dropDownView.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(handlePan(recognizer:))))
-            
-        }
-    }
-    //@IBOutlet weak internal var dropViewGestureRecognizer: UIPanGestureRecognizer!
     @objc func handlePan(recognizer:UIPanGestureRecognizer) {
         let translation = recognizer.translation(in: recognizer.view )
         if let view = recognizer.view {
             let newY = view.center.y + translation.y
             if newY > UIScreen.main.bounds.maxY - view.frame.height/2 {
-                view.center = CGPoint(x:view.center.x,
-                                      y: newY)
+                view.center = CGPoint(x:view.center.x, y: newY)
+                ChangeHeightOfMap(changes: Int(translation.y))
             }
             recognizer.setTranslation(CGPoint.zero, in: view)
         }
     }
     
-    @objc func handleViewPan(recognizer:UIPanGestureRecognizer) {
-//        let translation = recognizer.translation(in: recognizer.view)
-//        print("recognizer: \(translation.y)")
-//        if let view = dropDownView {
-//            self.view.bringSubview(toFront: view) //.center = CGPoint(x:view.center.x + translation.x,y:view.center.y + translation.y)
-//            var newDropDownY = CGFloat(0)
-//            if translation.y < 0 {
-//                newDropDownY = max(UIScreen.main.bounds.maxY - view.frame.height/2 , view.center.y + translation.y)
-//            }
-//            else {
-//                newDropDownY = min(UIScreen.main.bounds.maxY + view.frame.height/2, view.center.y + translation.y)
-//            }
-//
-//            dropDownView.center = CGPoint(x:view.center.x,y: newDropDownY)
-//        }
-//        recognizer.setTranslation(CGPoint.zero, in: self.view)
-    }
-    
     var user : UserDataModel? = nil
     private var mapView : GMSMapView!
     private var locationManager : CLLocationManager!
+    private let initDetailControllerHeight = 180
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //dropViewGestureRecognizer.delegate = self
-        let panView = UIPanGestureRecognizer(target: self, action: #selector(handleViewPan(recognizer:)))
-        view.addGestureRecognizer(panView)
         
         var userLocation = CLLocationCoordinate2D.init()
         
@@ -73,7 +38,7 @@ class UserDetailsViewController: UIViewController {
             userLocation = CLLocationCoordinate2D.init(latitude: position.coordinate.latitude, longitude: position.coordinate.longitude)
         }
         
-        var camera = GMSCameraPosition.camera(withTarget: userLocation, zoom: 10)
+        let camera = GMSCameraPosition.camera(withTarget: userLocation, zoom: 10)
         
         mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
         mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -91,7 +56,7 @@ class UserDetailsViewController: UIViewController {
         
         mapView.settings.consumesGesturesInView = false
         
-        var marker = GMSMarker.init(position: userLocation)
+        let marker = GMSMarker.init(position: userLocation)
         marker.icon = UIImage.init(named: "default_marker.png")
         marker.map = mapView
         
@@ -100,25 +65,52 @@ class UserDetailsViewController: UIViewController {
     }
 
     private func CreateShareButton(){
-        if navigationItem != nil{
-            let shareButton = UIBarButtonItem(title: "SHARE", style: .plain, target: nil, action: nil)
-            navigationItem.rightBarButtonItem = shareButton
+        let shareButton = UIBarButtonItem(title: "SHARE", style: .plain, target: nil, action: nil)
+        navigationItem.rightBarButtonItem = shareButton
+    }
+    
+    private func AddUserDataController(frame : CGRect) {
+        let initFrame = CGRect(x: 0, y: self.view.frame.maxY, width: frame.width, height: frame.height)
+        
+        let childVC : UserDetailsAppearingViewController
+        if !self.childViewControllers.contains(where: {viewController in return type(of : viewController) == UserDetailsAppearingViewController.self}) {
+            childVC = UserDetailsAppearingViewController(nibName: "UserDetailsAppearingViewController", bundle: Bundle.main)
+            addChildViewController(childVC)
+            childVC.view.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(handlePan(recognizer:))))
+            childVC.SetUserData(userdata: user!)
+            view.addSubview(childVC.view)
         }
+        else {
+            childVC = self.childViewControllers.first as! UserDetailsAppearingViewController
+        }
+        childVC.view.frame = initFrame
+        self.mapView.frame = view.frame
+        
+        let mapFrame = CGRect(x: mapView.frame.minX, y: mapView.frame.minY, width: mapView.frame.width, height: mapView.frame.height - frame.height)
+        
+        UIView.animate(withDuration: 0.5, animations: { [weak self] () in
+            childVC.view.frame = frame
+            
+            self?.mapView.frame = mapFrame
+        },
+        completion  : { _ in childVC.didMove(toParentViewController: self)})
+    }
+    
+    private func ChangeHeightOfMap(changes : Int){
+        let frame = CGRect(x: mapView.frame.minX, y: mapView.frame.minY, width: mapView.frame.width, height: mapView.frame.height + CGFloat(changes))
+        mapView.frame = frame
     }
 
 }
 
 extension UserDetailsViewController : GMSMapViewDelegate {
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
-        let frame = CGRect(x: dropDownView.frame.minX, y: UIScreen.main.bounds.maxY, width: dropDownView.frame.width, height: dropDownView.frame.height)
-        dropDownView.frame = frame
-        let newFrame = CGRect(x: dropDownView.frame.minX, y: UIScreen.main.bounds.maxY - 40, width: dropDownView.frame.width, height: dropDownView.frame.height)
-        self.view.bringSubview(toFront: dropDownView)
+        
+        let newFrame = CGRect(x: 0, y: Int(self.view.frame.maxY) - initDetailControllerHeight, width: Int(self.view.frame.width), height: initDetailControllerHeight)
 
-        UIView.animate(withDuration: 0.5, animations: {[weak self, newFrame] () in
-            self?.dropDownView.frame = newFrame
-        })
+        AddUserDataController(frame: newFrame)
         
         return false
     }
+    
 }
